@@ -65,7 +65,7 @@ app.post('/delete/:id', async function(req, res){
   })
 
 //검색기능 추가
-app.get('/search/:id', async function(req, res){
+app.post('/search/:id', async function(req, res){
   await userinfos.findAll({
     attributes:['name']
   }).then((result) => {

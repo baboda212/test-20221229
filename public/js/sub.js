@@ -1,17 +1,13 @@
-$(function(){
-
-    $('#search_input').keyup(function(){
-        var k = $(this).val();
-        $(".post_list > tr").hide();
-        var name = $(".post_list > tr > td:contains('" + k + "')");
-        var age = $(".post_list > tr > td:contains('" + k + "')");
-        var sex = $(".post_list > tr > td:contains('" + k + "')");
-        var contact = $(".post_list > tr > td:contains('" + k + "')");
-        $(name).show();
-        $(age).show();
-        $(sex).show();
-        $(contact).show();
-    })  
-});
+/* $(function(){
+    function searchPost() {
+        let searchValue = document.getElementById('search_input').value.trim();
+        if (searchValue.length > 1) {
+            location.href = "/search/" + searchValue + "/";
+        } else {
+            alert('검색어(' + searchValue + ')가 너무 짧습니다.');
+        }
+    };
+     
+}); */
 
 
