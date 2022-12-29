@@ -1,0 +1,2 @@
+--CREATE TABLE userinfo (id INTEGER NOT NULL PRIMARY KEY, name TEXT NOT NULL, age INTEGER NOT NULL, sex TEXT NOT NULL, contact TEXT NULL);
+--INSERT INTO userinfos (name, age, sex, contact, createdAt, updatedAt) VALUES("한예슬",31, "여", "010-1234-5678", "2022-12-29", "2022-12-29");

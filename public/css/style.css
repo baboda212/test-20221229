@@ -1,0 +1,91 @@
+/* style.css */
+a{
+    color: red;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 60%;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    padding: 20px;
+}
+.container h1{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+#search_input{
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 20rem;
+}
+#search{
+    padding: 2.5px 10px;
+    border: 1px solid rgba(105, 105, 133, 0.644);
+    color: #fff;
+    background-color: rgba(105, 105, 133, 0.644);
+    border-radius: 5px;
+}
+.search_form{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.post_list{
+    border: 1px solid #ddd;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+} 
+tr{
+    /* border: 1px solid #ddd; */
+    height: 2rem;
+}
+tr:nth-child(2n){
+    background-color: #ddd;
+}
+.contact{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5px;
+}
+.btn-d{
+    padding: 2.5px 10px;
+    border: 1px solid rgba(105, 105, 133, 0.644);
+    color: #fff;
+    background-color: rgba(105, 105, 133, 0.644);
+    border-radius: 5px;
+}
+
+.btn_i{
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 20rem; 
+    margin-bottom: 0.5rem;
+}
+/* .sex{
+    margin-bottom: 0.5rem;
+} */
+.btn_a{
+    padding: 2.5px 10px;
+    border: 1px solid rgba(105, 105, 133, 0.644);
+    color: #fff;
+    background-color: rgba(105, 105, 133, 0.644);
+    border-radius: 5px;
+}
+h2{
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+.btn{
+    text-align: center;
+}
+p{
+    font-size: 14px;
+}

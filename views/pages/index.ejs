@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>고객정보관리</h1>
+        <form action="/search" method="post" class="search_form">
+            <input type="text" name="search" placeholder="고객명으로 검색" value="" id="search" >
+            <button type="submit" id="search">검색</button>
+        </form>
+    
+
+        <p>Total Posts : <%= Userinfos.length  %> 개 </p>
+
+        <table class="post_list">
+            <th>id</th>
+            <th>name</th>
+            <th>age</th>
+            <th>sex</th>
+            <th>contact</th>
+            <% for(let i = Userinfos.length - 1; i >= 0; i--){ %>
+            <tr>
+                <div>
+                    <td>
+                        <%= Userinfos[i].id %>  
+                    </td>
+                    <td class="name">
+                        <%= Userinfos[i].name %>
+                    </td>
+                    <td>
+                        <%= Userinfos[i].age %> 
+                    </td>
+                    <td>
+                        <%= Userinfos[i].sex %> 
+                    </td>
+                    <td class="contact">
+                        <%= Userinfos[i].contact%> 
+                        <form action="/delete/<%= Userinfos[i].id %>" method="post" onsubmit="let result = confirm('삭제하시겠습니까?');if(!result) return false;">
+                            <button type="submit" class="btn-d">삭제</button>
+                        </form>
+                    </td>
+                </div>       
+            </tr>    
+            <% } %>       
+        </table>
+
+        <h2>정보입력</h2>
+        <form action="/create" method="post" class="btn">
+            <input type="text" name="name" placeholder="이름 입력" class="btn_i">
+            <input type="text" name="age" placeholder="나이 입력" class="btn_i">
+            <div class="sex" id="sex">
+                <input type="radio" name="sex" id="man" value="man">
+                <label for="male">남자</label>
+                <input type="radio" name="sex" id="woman" value="woman">
+                <label for="female">여자</label>
+            </div>
+            <input type="text" name="contact" placeholder="연락처" class="btn_i"><br>
+            <button type="submit" class="btn_a">추가</button>
+        </form>
+    </div>
+    
+
+    <script src="/public/js/sub.js"></script>
+</body>
+</html>
