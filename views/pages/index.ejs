@@ -25,6 +25,7 @@
             <th>age</th>
             <th>sex</th>
             <th>contact</th>
+            <th></th>
             <% for(let i = Userinfos.length - 1; i >= 0; i--){ %>
             <tr>
                 <div>
@@ -42,6 +43,8 @@
                     </td>
                     <td class="contact">
                         <%= Userinfos[i].contact%> 
+                    </td>
+                    <td>
                         <form action="/delete/<%= Userinfos[i].id %>" method="post" onsubmit="let result = confirm('삭제하시겠습니까?');if(!result) return false;">
                             <button type="submit" class="btn-d">삭제</button>
                         </form>
