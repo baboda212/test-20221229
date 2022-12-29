@@ -4,6 +4,7 @@ const ejs = require('ejs');
 const {sequelize, userinfos} = require('./database');
 const { Database } = require('sqlite3');
 
+
 //DB연결
 sequelize.sync().then(function(){
   //DB연결되었는지 확인용
@@ -64,11 +65,11 @@ app.post('/delete/:id', async function(req, res){
   })
 
 //검색기능 추가
-app.get('/search', function(req, res){
-  req.userinfos.findAll({
-    attributes:['name','age', 'sex','contact']
+app.get('/search/:id', async function(req, res){
+  await userinfos.findAll({
+    attributes:['name']
   }).then((result) => {
-    res.render('pages/index.ejs', {result});
+    res.render('pages/about.ejs', {result});
   });
 });
  
