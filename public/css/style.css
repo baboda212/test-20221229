@@ -68,9 +68,9 @@ tr:nth-child(2n){
 }
 .btn-d{
     padding: 2.5px 10px;
-    border: 1px solid rgba(105, 105, 133, 0.8);
+    border: 1px solid rgb(158, 157, 157);
     color: #fff;
-    background-color: rgba(105, 105, 133, 0.8);
+    background-color: rgb(158, 157, 157);
     border-radius: 5px;
 }
 
