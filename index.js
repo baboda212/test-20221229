@@ -3,6 +3,7 @@ const app = express();
 const ejs = require('ejs');
 const {sequelize, Posts, userinfos} = require('./database');
 const { Database } = require('sqlite3');
+const { Op } = require("sequelize");
 
 
 //DB연결
@@ -71,9 +72,15 @@ app.post('/delete/:id', async function(req, res){
 app.get('/search', async function(req, res){
   console.log(req.query.search);
   //findAll은 전체를 찾는다, findone은 하나만 찾는다
+  const search = req.query.search;
   const Userinfos = await userinfos.findAll({
     //이름
-    where: { name: req.query.search }
+    where: {
+      [Op.or] : [
+        { name: { [Op.like] : `%${search}%` } }
+      ]
+    }
+   
   });
     res.render('pages/index.ejs', { 
       Userinfos
