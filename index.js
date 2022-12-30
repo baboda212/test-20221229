@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const ejs = require('ejs');
-const {sequelize, userinfos} = require('./database');
+const {sequelize, Posts, userinfos} = require('./database');
 const { Database } = require('sqlite3');
 
 
@@ -23,8 +23,11 @@ app.use(express.static("public"));
 
 //home 라우팅
 app.get('/', async function(req, res){
-    const Userinfos = await userinfos.findAll();
-    console.log(JSON.stringify(Userinfos, null, 2))// 확인용
+    const Userinfos = await userinfos.findAll({
+      order: [["createdAt", "desc"]]
+    });
+    //console.log(JSON.stringify(Userinfos, null, 2))// 확인용
+
     res.render('pages/index.ejs', {Userinfos})
 });
 
@@ -65,17 +68,25 @@ app.post('/delete/:id', async function(req, res){
   })
 
 //검색기능 추가
-app.post('/search/:id', async function(req, res){
-  await userinfos.findAll({
-    attributes:['name']
-  }).then((result) => {
-    res.render('pages/about.ejs', {result});
+app.get('/search', async function(req, res){
+  console.log(req.query.search);
+  //findAll은 전체를 찾는다, findone은 하나만 찾는다
+  const Userinfos = await userinfos.findAll({
+    //이름
+    where: { name: req.query.search }
   });
+    res.render('pages/index.ejs', { 
+      Userinfos
+    }) 
 });
  
 // about
-app.get('/about', function(req, res) {
-  res.render('pages/about.ejs',{result} )
+app.get('/about', async function(req, res) {
+  const posts = await Posts.findAll({
+    order: [["createdAt", "desc"]]
+  });
+
+  res.render('pages/about.ejs', { posts, a: false });
 })
 
 const port = 3001;

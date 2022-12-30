@@ -6,6 +6,15 @@ const sequelize = new Sequelize({
     dialect: 'sqlite', //db종류
     storage: 'database.sqlite', //파일명
 });
+
+const Posts = sequelize.define('Posts', {
+    // create(속성 정의)
+    post: {
+      type: DataTypes.STRING, // 문자형
+      allowNull: false  // NOT NULL(필수값)
+    },
+  })
+
 //Model 생성(자료구조(TABLE) 생성)
 const userinfos = sequelize.define('userinfo',{
     name: {
@@ -27,4 +36,4 @@ const userinfos = sequelize.define('userinfo',{
 })
 
 
-module.exports = { sequelize, userinfos };
+module.exports = { sequelize, Posts, userinfos };
