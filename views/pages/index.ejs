@@ -10,7 +10,7 @@
 </head>
 <body>
     <nav>
-        <a href="/">고객정보관리메인페이지</a> 
+        <a href="/">고객정보관리처음으로</a> 
       </nav>
     <div class="container">
         <h1>고객정보관리</h1>
@@ -22,11 +22,11 @@
         <p>Total Posts : <%= Userinfos.length %> 개 </p>
 
         <table class="post_list">
-            <th>id</th>
-            <th>name</th>
-            <th>age</th>
-            <th>sex</th>
-            <th>contact</th>
+            <th>ID</th>
+            <th>성함</th>
+            <th>나이</th>
+            <th>성별</th>
+            <th>연락처</th>
             <th></th>
             <% if(locals.Userinfos) { %>
                 <% for(let userinfo of Userinfos ){ %>
