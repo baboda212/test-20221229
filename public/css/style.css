@@ -2,7 +2,7 @@
 a{
     color: #fff;
     text-decoration: none;
-    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.644);
     padding: 10px;
     text-align: center;
     border-radius: 10px;
@@ -38,9 +38,9 @@ nav{
 }
 #search{
     padding: 2.5px 10px;
-    border: 1px solid rgba(105, 105, 133, 0.644);
+    border: 1px solid rgba(0, 0, 0, 0.644);
     color: #fff;
-    background-color: rgba(105, 105, 133, 0.644);
+    background-color: rgba(0, 0, 0, 0.644);
     border-radius: 5px;
 }
 .search_form{
@@ -68,9 +68,9 @@ tr:nth-child(2n){
 }
 .btn-d{
     padding: 2.5px 10px;
-    border: 1px solid rgba(105, 105, 133, 0.644);
+    border: 1px solid rgba(105, 105, 133, 0.8);
     color: #fff;
-    background-color: rgba(105, 105, 133, 0.644);
+    background-color: rgba(105, 105, 133, 0.8);
     border-radius: 5px;
 }
 
@@ -86,9 +86,9 @@ tr:nth-child(2n){
 } 
 .btn_a{
     padding: 2.5px 10px;
-    border: 1px solid rgba(105, 105, 133, 0.644);
+    border: 1px solid rgba(0, 0, 0, 0.644);
     color: #fff;
-    background-color: rgba(105, 105, 133, 0.644);
+    background-color: rgba(0, 0, 0, 0.644);
     border-radius: 5px;
 }
 h2{
