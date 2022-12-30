@@ -43,6 +43,12 @@ app.post('/create', async function(req, res){
       sex = woman;
     }
     let contact = req.body.contact;
+    //연락처 마스킹 처리
+    let phoneMatchValue = contact.match(/\d{3}-\d{4}-\d{4}/gi);
+    if(/-[0-9]{4}-/.test(phoneMatchValue))
+    {
+        contact= contact.toString().replace(phoneMatchValue, phoneMatchValue.toString().replace(/-[0-9]{4}-/g, "-****-"));
+    }
 
     //테이블명.create({칼럼이름: 값})
     const newUserinfo = await userinfos.create({
